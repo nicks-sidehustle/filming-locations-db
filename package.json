@@ -1,0 +1,26 @@
+{
+  "name": "filming-locations-db",
+  "version": "1.0.0",
+  "description": "Database and scraping tools for filming locations directory",
+  "main": "index.js",
+  "scripts": {
+    "start": "npx ts-node scripts/fetch-initial-data.ts",
+    "scrape:imdb": "python scrapers/imdb-scraper.py",
+    "scrape:reddit": "python scrapers/reddit-scraper.py",
+    "scrape:wikipedia": "python scrapers/wikipedia-scraper.py",
+    "pipeline": "ts-node integrations/data-pipeline.ts",
+    "setup": "bash scripts/start-ingestion.sh"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.39.0",
+    "axios": "^1.6.0",
+    "dotenv": "^16.3.1"
+  },
+  "devDependencies": {
+    "@types/node": "^20.10.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.3.3"
+  },
+  "author": "",
+  "license": "ISC"
+}
